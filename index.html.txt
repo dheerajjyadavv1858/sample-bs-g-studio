@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brand Spark | Performance Marketing for Interior Designers</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Tailwind Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              serif: ['"Cormorant Garamond"', 'serif'],
+              sans: ['"Inter"', 'sans-serif'],
+              display: ['"Inter"', 'sans-serif'],
+            },
+            colors: {
+              appleGrey: '#f5f5f7',
+              charcoal: '#1d1d1f',
+            },
+            letterSpacing: {
+              tighter: '-0.05em',
+              tight: '-0.025em',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+      }
+      
+      /* Mobile Menu Transition */
+      #mobile-menu {
+        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+      }
+      #mobile-menu.hidden-menu {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+      #mobile-menu.visible-menu {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.24",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-white min-h-screen w-full overflow-x-hidden selection:bg-black selection:text-white">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent py-6 bg-transparent">
+      <div class="max-w-[1000px] mx-auto px-6 md:px-12 flex justify-between items-center">
+        <div id="brand-logo" class="font-sans text-xl font-semibold tracking-tight transition-colors text-white">
+          Brand Spark.
+        </div>
+        
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex space-x-8">
+          <a href="#services" class="nav-link text-[13px] font-medium transition-colors tracking-wide text-gray-300 hover:text-white">Services</a>
+          <a href="#results" class="nav-link text-[13px] font-medium transition-colors tracking-wide text-gray-300 hover:text-white">Results</a>
+          <a href="#team" class="nav-link text-[13px] font-medium transition-colors tracking-wide text-gray-300 hover:text-white">Team</a>
+          <a href="#contact" class="nav-link text-[13px] font-medium transition-colors tracking-wide text-gray-300 hover:text-white">Contact</a>
+        </div>
+
+        <!-- Mobile Toggle -->
+        <button id="menu-btn" class="md:hidden text-white transition-colors">
+          <i data-lucide="menu" width="20" height="20"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-black/95 backdrop-blur-xl flex flex-col items-center justify-center hidden-menu">
+      <button id="close-menu-btn" class="absolute top-6 right-6 text-white">
+        <i data-lucide="x" width="24" height="24"></i>
+      </button>
+      <div class="flex flex-col space-y-8 text-center">
+        <a href="#services" class="mobile-link text-2xl font-sans font-medium text-white hover:text-gray-400 transition-colors">Services</a>
+        <a href="#results" class="mobile-link text-2xl font-sans font-medium text-white hover:text-gray-400 transition-colors">Results</a>
+        <a href="#team" class="mobile-link text-2xl font-sans font-medium text-white hover:text-gray-400 transition-colors">Team</a>
+        <a href="#contact" class="mobile-link text-2xl font-sans font-medium text-white hover:text-gray-400 transition-colors">Contact</a>
+      </div>
+    </div>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="relative min-h-screen bg-black text-white flex flex-col justify-center items-center overflow-hidden">
+        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center pt-20">
+          <div data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out-cubic">
+            <h1 class="font-sans font-semibold text-6xl md:text-8xl lg:text-[100px] leading-[1.05] tracking-tighter mb-6 text-transparent bg-clip-text bg-gradient-to-b from-white to-white/70">
+              Brand Spark.
+            </h1>
+            
+            <p class="font-sans text-gray-400 text-xl md:text-2xl font-medium leading-relaxed mb-10 max-w-2xl mx-auto tracking-tight">
+              Performance marketing tailored for interior designers.<br class="hidden md:block"/> 
+              Scale your business with creative excellence.
+            </p>
+
+            <div class="flex justify-center" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+              <a
+                href="#contact"
+                class="group inline-flex items-center bg-white text-black px-8 py-4 rounded-full text-base font-medium transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)]"
+              >
+                Get Free Consultation
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Minimal fade at bottom -->
+        <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black to-transparent pointer-events-none"></div>
+      </section>
+
+      <!-- Services Section -->
+      <section id="services" class="py-32 md:py-40 bg-[#f5f5f7] text-black">
+        <div class="mx-auto px-6 md:px-12 max-w-[1000px]">
+          <div class="text-center mb-20">
+            <h2 class="font-sans text-4xl md:text-5xl font-semibold tracking-tight mb-4 text-gray-900">
+              What We Do.
+            </h2>
+            <p class="text-gray-500 text-lg font-medium">Precision campaigns for modern interiors.</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Service 1 -->
+            <div data-aos="fade-up" data-aos-delay="0" data-aos-duration="600" class="bg-white p-10 rounded-[30px] shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full">
+              <div class="mb-auto">
+                <div class="w-12 h-12 bg-black rounded-full flex items-center justify-center mb-8 text-white">
+                  <i data-lucide="bar-chart-3" width="20" height="20"></i>
+                </div>
+                <h3 class="font-sans text-xl font-semibold mb-3 tracking-tight">Google Ads</h3>
+                <p class="font-sans text-gray-500 leading-relaxed text-sm font-medium">
+                  High-intent search campaigns targeting homeowners actively looking for interior design services in your specific locality.
+                </p>
+              </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div data-aos="fade-up" data-aos-delay="100" data-aos-duration="600" class="bg-white p-10 rounded-[30px] shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full">
+              <div class="mb-auto">
+                <div class="w-12 h-12 bg-black rounded-full flex items-center justify-center mb-8 text-white">
+                  <i data-lucide="layers" width="20" height="20"></i>
+                </div>
+                <h3 class="font-sans text-xl font-semibold mb-3 tracking-tight">Meta Ads</h3>
+                <p class="font-sans text-gray-500 leading-relaxed text-sm font-medium">
+                  Visually stunning Instagram and Facebook campaigns that showcase your portfolio to a curated high-net-worth audience.
+                </p>
+              </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="600" class="bg-white p-10 rounded-[30px] shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full">
+              <div class="mb-auto">
+                <div class="w-12 h-12 bg-black rounded-full flex items-center justify-center mb-8 text-white">
+                  <i data-lucide="smartphone" width="20" height="20"></i>
+                </div>
+                <h3 class="font-sans text-xl font-semibold mb-3 tracking-tight">Social Management</h3>
+                <p class="font-sans text-gray-500 leading-relaxed text-sm font-medium">
+                  End-to-end profile management, content strategy, and community engagement to build authority in the design space.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Results Section -->
+      <section id="results" class="py-32 md:py-40 bg-white text-black">
+        <div class="mx-auto px-6 md:px-12 max-w-[1000px]">
+          <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-24">
+              <h2 class="font-sans text-4xl md:text-5xl font-semibold tracking-tight mb-2">
+                Proven Results.
+              </h2>
+              <p class="font-sans text-gray-400 text-sm font-medium tracking-wide uppercase mt-4">
+                Client Case Study: Tanu Interior
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-0 items-center">
+              <!-- Stat 1 -->
+              <div data-aos="fade-up" data-aos-delay="0" class="flex flex-col items-center text-center md:border-r md:border-gray-100">
+                <span class="font-sans text-5xl md:text-6xl font-bold tracking-tighter mb-2 bg-clip-text text-transparent bg-gradient-to-b from-black to-gray-600">
+                  ₹15k
+                </span>
+                <span class="font-sans text-gray-500 text-xs font-semibold tracking-wider uppercase">
+                  Total Ad Spend
+                </span>
+              </div>
+              
+              <!-- Stat 2 -->
+              <div data-aos="fade-up" data-aos-delay="100" class="flex flex-col items-center text-center md:border-r md:border-gray-100">
+                <span class="font-sans text-5xl md:text-6xl font-bold tracking-tighter mb-2 bg-clip-text text-transparent bg-gradient-to-b from-black to-gray-600">
+                  169
+                </span>
+                <span class="font-sans text-gray-500 text-xs font-semibold tracking-wider uppercase">
+                  Quality Leads
+                </span>
+              </div>
+
+              <!-- Stat 3 -->
+              <div data-aos="fade-up" data-aos-delay="200" class="flex flex-col items-center text-center">
+                <span class="font-sans text-5xl md:text-6xl font-bold tracking-tighter mb-2 bg-clip-text text-transparent bg-gradient-to-b from-black to-gray-600">
+                  6
+                </span>
+                <span class="font-sans text-gray-500 text-xs font-semibold tracking-wider uppercase">
+                  Project Conversions
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Achievement Banner -->
+      <div class="bg-[#f5f5f7] border-y border-gray-200 py-8">
+        <div class="max-w-[1000px] mx-auto px-6 text-center">
+          <p class="text-gray-600 font-sans text-lg md:text-xl font-medium tracking-tight">
+            Trusted by over 100+ interior design studios nationwide.
+          </p>
+        </div>
+      </div>
+
+      <!-- Team Section -->
+      <section id="team" class="py-32 md:py-40 bg-white text-center">
+        <div class="mx-auto px-6 md:px-12 max-w-[1000px]">
+          <div data-aos="fade-up" data-aos-duration="800" class="flex flex-col items-center justify-center max-w-2xl mx-auto">
+            <h2 class="font-sans text-4xl font-semibold tracking-tight mb-16 text-black">Meet the Founder.</h2>
+            
+            <div class="relative group">
+              <div class="relative overflow-hidden rounded-[32px] shadow-xl w-[300px] h-[380px] md:w-[340px] md:h-[420px] mb-10 bg-white">
+                <img 
+                  src="priya-sharma-updated.png" 
+                  alt="Priya Sharma - Founder" 
+                  onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800'"
+                  class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                />
+                <!-- Subtle inner border -->
+                <div class="absolute inset-0 rounded-[32px] border border-black/5 pointer-events-none"></div>
+              </div>
+            </div>
+
+            <div class="flex flex-col items-center space-y-2">
+              <h3 class="font-sans text-3xl font-semibold tracking-tight text-black">
+                Priya Sharma
+              </h3>
+              <p class="font-sans text-lg text-gray-500 font-medium tracking-wide">
+                Founder & Strategist
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="py-32 md:py-40 bg-black text-white">
+        <div class="mx-auto px-6 md:px-12 max-w-[1000px]">
+          <div class="flex flex-col items-center text-center max-w-2xl mx-auto">
+            <h2 class="font-sans text-5xl md:text-6xl font-semibold tracking-tighter mb-6">
+              Let's work together.
+            </h2>
+            <p class="text-gray-400 text-xl font-medium mb-12 leading-relaxed">
+              Ready to transform your interior design business?
+            </p>
+
+            <div class="space-y-6 w-full flex flex-col items-center">
+              <a 
+                href="tel:7380311858"
+                class="text-2xl md:text-3xl font-sans font-medium hover:text-gray-300 transition-colors tracking-tight"
+              >
+                7380311858
+              </a>
+
+              <a 
+                href="mailto:priyasharma141428@gmail.com"
+                class="text-xl md:text-2xl font-sans text-gray-400 hover:text-white transition-colors tracking-tight"
+              >
+                priyasharma141428@gmail.com
+              </a>
+
+              <a 
+                href="mailto:priyasharma141428@gmail.com"
+                class="mt-8 inline-flex items-center bg-white text-black px-8 py-4 rounded-full text-base font-medium transition-all hover:scale-105 active:scale-95"
+              >
+                Start Your Campaign
+                <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12 border-t border-white/10 mt-24">
+      <div class="max-w-[1000px] mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-8 md:gap-0">
+        <div class="flex flex-col items-center md:items-start space-y-4">
+          <p class="font-serif text-2xl font-bold tracking-tight">Brand Spark.</p>
+          <div class="flex space-x-6">
+            <a 
+              href="https://www.linkedin.com/in/priyasharma14" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="text-gray-400 hover:text-white transition-colors"
+              aria-label="LinkedIn"
+            >
+              <i data-lucide="linkedin" width="20" height="20"></i>
+            </a>
+            <a 
+              href="https://twitter.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="text-gray-400 hover:text-white transition-colors"
+              aria-label="Twitter"
+            >
+              <i data-lucide="twitter" width="20" height="20"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="text-gray-500 text-sm text-center md:text-right">
+          <p>&copy; <span id="year"></span> Brand Spark Agency. All rights reserved.</p>
+          <p class="mt-1">Performance Marketing for Interior Designers.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+      // Initialize Icons
+      lucide.createIcons();
+
+      // Initialize AOS
+      AOS.init({
+        once: true,
+        offset: 50,
+        duration: 800,
+      });
+
+      // Set Current Year
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Navbar Logic
+      const navbar = document.getElementById('navbar');
+      const brandLogo = document.getElementById('brand-logo');
+      const navLinks = document.querySelectorAll('.nav-link');
+      const menuBtn = document.getElementById('menu-btn');
+      const closeMenuBtn = document.getElementById('close-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileLinks = document.querySelectorAll('.mobile-link');
+
+      function updateNavbar() {
+        if (window.scrollY > 20) {
+          navbar.classList.add('bg-white/80', 'backdrop-blur-md', 'border-gray-200', 'py-3');
+          navbar.classList.remove('bg-transparent', 'border-transparent', 'py-6');
+          
+          brandLogo.classList.remove('text-white');
+          brandLogo.classList.add('text-black');
+          
+          menuBtn.classList.remove('text-white');
+          menuBtn.classList.add('text-black');
+
+          navLinks.forEach(link => {
+            link.classList.remove('text-gray-300', 'hover:text-white');
+            link.classList.add('text-gray-600', 'hover:text-black');
+          });
+        } else {
+          navbar.classList.remove('bg-white/80', 'backdrop-blur-md', 'border-gray-200', 'py-3');
+          navbar.classList.add('bg-transparent', 'border-transparent', 'py-6');
+          
+          brandLogo.classList.add('text-white');
+          brandLogo.classList.remove('text-black');
+          
+          menuBtn.classList.add('text-white');
+          menuBtn.classList.remove('text-black');
+
+          navLinks.forEach(link => {
+            link.classList.add('text-gray-300', 'hover:text-white');
+            link.classList.remove('text-gray-600', 'hover:text-black');
+          });
+        }
+      }
+
+      window.addEventListener('scroll', updateNavbar);
+      // Initial check
+      updateNavbar();
+
+      // Mobile Menu Logic
+      function openMenu() {
+        mobileMenu.classList.remove('hidden-menu');
+        mobileMenu.classList.add('visible-menu');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+      }
+
+      function closeMenu() {
+        mobileMenu.classList.remove('visible-menu');
+        mobileMenu.classList.add('hidden-menu');
+        document.body.style.overflow = '';
+      }
+
+      menuBtn.addEventListener('click', openMenu);
+      closeMenuBtn.addEventListener('click', closeMenu);
+      
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
+      });
+    </script>
+  </body>
+</html>
